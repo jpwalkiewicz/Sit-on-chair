@@ -767,6 +767,17 @@ input::-webkit-input-placeholder , textarea::-webkit-input-placeholder {
 
 
 
+.error-message {
+ color : #ed2553;
+ font-size: 15px;
+}
+
+.success-message {
+ color: #3D9970;
+ font-size: 15px;
+}
+
+
 [type="submit"] {
      width: 65%;
 }

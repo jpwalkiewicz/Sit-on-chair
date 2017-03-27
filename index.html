@@ -278,13 +278,17 @@
 		</div>
 
 
-	<form class="container clearFix">
+	<form class="container clearFix" novalidate>
 		<div class="left__form floatLeft">
 			<input type="text" name="imie" id="imie" placeholder="Imię">
 			<br>
 			<input type="email" name="email" id="email" placeholder="e-mail">
 			<br>
-			<textarea  rows="8" name="wiadomosc" id="wiadomosc" placeholder="Wiadomość"></textarea>
+			<textarea  rows="6" name="wiadomosc" id="mesage" placeholder="Wiadomość"></textarea>
+			<p class="error-message floatRight">
+			</p>
+			<p class="success-message floatRight">
+			</p>
 		</div>
 		<div class="right__form floatRight">
 			<img src="images/red_chair.png" class="form_chair">
@@ -292,7 +296,7 @@
 			<input type="checkbox" name="agreement" id="agreement" value="agreement" class="checkbox check-box">
 			<label for="agreement" class="agreement">Zgadzam się na przetwarzanie danych osobowych</label>
 			<br>
-			<input type="submit" value="wyślij" class="txtToUpperCase button">
+			<input type="submit" value="wyślij" id="contactSend" class="txtToUpperCase button">
 		</div>
 	</form>
 
