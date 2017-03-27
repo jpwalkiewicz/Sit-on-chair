@@ -67,6 +67,7 @@ body {
 
 
 
+
 /*General text options*/
 
 .txtToUpperCase {
@@ -100,6 +101,7 @@ body {
     transform: scale(1.2);
     transition-duration: 100ms;
     font-weight: 600;
+    background-color: #10a187;
 }
 
 .boxSize {
@@ -502,7 +504,7 @@ div[alt="child on chair foto"]:hover div {
 
 .application {
   background-color: #f9f9f9;
-  padding:30px 0;
+
 }
 .application h3 {
   color: #575757;
@@ -665,7 +667,7 @@ div[alt="child on chair foto"]:hover div {
 }
 
 .panel_left span{
-  margin-top:10px;
+  margin-top: 8px;
   font-size: 22px;
   color: #5b5a5a;
   display: block;
@@ -675,13 +677,14 @@ div[alt="child on chair foto"]:hover div {
   display: block;
   font-size: 22px;
   color: #24ba9f;
-  margin-top:10px;
+  margin-top:8px;
 }
 .sum_label{
   display: inline-block;
-  width: 185px;
+  width: 175px;
   margin-top: 10px;
   font-size: 22px;
+  font-weight: 600;
   color: #5b5a5a;
 }
 
@@ -721,21 +724,50 @@ div[alt="child on chair foto"]:hover div {
   top: 54px;
   display:none;
 }
+
+.visible {
+     display: block;
+}
+
+
+
+
 .list_panel li {
   margin-top:10px;
   cursor: pointer;
   color: #585858;
 }
 
-.title {
+.chair_title {
   height: 30px;
 }
 
 .button_chair {
      font-size: 25px;
      margin-left: 50px;
-     margin-top: 50px;
+     margin-top: 45px;
 
+}
+
+.resetButton {
+     display: none;
+     background-color: rgb(255, 136, 136);
+     font-size: 20px;
+     /*margin-left: 30px;*/
+     margin-right: 50px;
+     margin-top: 8px;
+     padding-top: 2px;
+     padding-bottom: 2px;
+
+}
+.resetButton:hover {
+     background-color: red;
+}
+
+.orderInfo {
+     text-align: center;
+     font-size: 10px;
+     color: red;
 }
 
 

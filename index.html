@@ -204,39 +204,41 @@
 	                    <span class="list_label">Wybierz rodzaj</span>
 	                    <span class="list_arrow"></span>
 	                    <ul class="list_panel">
-	                        <li>Clair</li>
-	                        <li>Margarita</li>
-	                        <li>Selena</li>
+	                        <li data-price="2000">Clair</li>
+	                        <li data-price="1300">Margarita</li>
+	                        <li data-price="3500">Selena</li>
 	                    </ul>
 	                </div>
 	                <div class="drop_down_list">
 	                    <span class="list_label">Wybierz kolor</span>
 	                    <span class="list_arrow"></span>
 	                    <ul class="list_panel">
-	                        <li>Czerwony</li>
-	                        <li>Czarny</li>
-	                        <li>Pomarańczowy</li>
+	                        <li data-price="120">Czerwony</li>
+	                        <li data-price="449">Czarny</li>
+	                        <li data-price="999">Pomarańczowy</li>
 	                    </ul>
 	                </div>
 	                <div class="drop_down_list">
 	                    <span class="list_label">Wybierz materiał</span>
 	                    <span class="list_arrow"></span>
 	                    <ul class="list_panel">
-	                        <li>Tkanina</li>
-	                        <li>Skóra</li>
+	                        <li data-price="200">Tkanina</li>
+	                        <li data-price="3999">Skóra</li>
 	                    </ul>
 	                </div>
 	                <div class="checkbox check-box">
 	                    <input type="checkbox" id="transport" data-transport-price="200">
 	                    <label for="transport">Transport</label>
 	                </div>
-	                <!--<div class="checkbox__order"></div>-->
-	                <!--<span class="list_label inline__order_text">Transport</span>-->
+
 	            </div>
 	        </section>
 
 	        <section class="image_part inline__order">
 	            <img src="images/orange.png">
+			  <div class="orderInfo">
+			  </div>
+
 	        </section>
 
 	        <section class="summary_part inline__order">
@@ -244,22 +246,25 @@
 
 	            <div class="summary_panel">
 	                <div class="panel_left">
-	                    <h4 class="title">Twój fotel</h4>
+	                    <h4 class="chair_title">Twój fotel</h4>
 	                    <span class="color"></span>
 	                    <span class="pattern"></span>
 	                    <span class="transport"></span>
 	                </div>
 	                <div class="panel_right">
-	                    <h4 class="title value"></h4>
-	                    <span class="color value"></span>
-	                    <span class="pattern value"></span>
-	                    <span class="transport value"></span>
+	                    <h4 class="title_value"></h4>
+	                    <span class="color_value"></span>
+	                    <span class="pattern_value"></span>
+	                    <span class="transport_value"></span>
 	                </div>
 	                <div class="sum_label">SUMA</div>
 	                <div class="sum"><strong></strong></div>
 	            </div>
-	            <a href="#" class="button button_chair txtToUpperCase">Zamawiam</a>
+			 <a href="#" class="button button_chair txtToUpperCase">Zamawiam</a>
+			 <div class="resetButton button button_chair ">Reset
+    		   </div>
 	        </section>
+
 	    </div>
 	</section>
 
