@@ -10,12 +10,14 @@
 </head>
 
 <body>
+
 	<!-- HEADER -->
 	<header id="header">
 		<div class="container header clearFix">
 			<div class="header__logo floatLeft txtToUpperCase">
 				<a href="#" title="Sit on chair">Sit <span class="highlighted">on</span> chair</a>
 			</div>
+
 			<!-- navigation menu -->
 			<nav class="header__main-nav floatRight">
 				<ul>
@@ -51,9 +53,7 @@
 	<section id="slider">
 		<div class="sliderBox container slider clearFix">
 			<div class="slider__image floatLeft">
-				<img src="images/black_chair_small.png" data-image="1" class="sliderChair">
-				<img src="images/red_chair_small.png" data-image="0" class="invisible sliderChair">
-				<img src="images/orange_small.png" data-image="0" class="invisible sliderChair">
+				<img src="images/black_chair_small.png" data-image="1" class="sliderChair slide">
 			</div>
 			<div class="slider__txt floatRight">
 
@@ -71,12 +71,8 @@
 				<span class="arrows arrow_left">&#60;</span>
 				<span class="arrows arrow_right">&#62;</span>
 			</div>
-
-
 		</div>
-
 	</section>
-
 
 	<!-- SECTION: offerts -->
 	<section id="offerts">
@@ -105,8 +101,6 @@
 					Hub bo si jobig tate wowtopvep pivsa hanovob nu luvir ijuca dasule zaufovo navumfe carumib.
 				</p>
 			</div>
-
-
 		</div>
 	</section>
 
@@ -177,11 +171,7 @@
 				</div>
 				<a href="#" class="priceBoxButton txtToUpperCase">dołącz</a>
 			</div>
-
-
-
 		</div>
-
 	</section>
 
 	<!-- SECTION: my chair -->
@@ -193,89 +183,80 @@
 			</div>
 		</div>
 
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+		<!-- Chair order  -->
+		<section class="application  container">
+			<div class="main_width">
+				<section class="choice_part inline__order">
+					<div class="form__order">
+						<div class="drop_down_list">
+							<span class="list_label">Wybierz rodzaj</span>
+							<span class="list_arrow"></span>
+							<ul class="list_panel">
+								<li data-price="2000">Clair</li>
+								<li data-price="1300">Margarita</li>
+								<li data-price="3500">Selena</li>
+							</ul>
+						</div>
+						<div class="drop_down_list">
+							<span class="list_label">Wybierz kolor</span>
+							<span class="list_arrow"></span>
+							<ul class="list_panel">
+								<li data-price="120">Czerwony</li>
+								<li data-price="449">Czarny</li>
+								<li data-price="999">Pomarańczowy</li>
+							</ul>
+						</div>
+						<div class="drop_down_list">
+							<span class="list_label">Wybierz materiał</span>
+							<span class="list_arrow"></span>
+							<ul class="list_panel">
+								<li data-price="200">Tkanina</li>
+								<li data-price="3999">Skóra</li>
+							</ul>
+						</div>
+						<div class="checkbox check-box transportCheck">
+							<input type="checkbox" id="transport" data-transport-price="200">
+							<label for="transport">Transport</label>
+						</div>
 
-	<section class="application  container">
-	    <div class="main_width">
-	        <section class="choice_part inline__order">
-	            <div class="form__order">
-	                <div class="drop_down_list">
-	                    <span class="list_label">Wybierz rodzaj</span>
-	                    <span class="list_arrow"></span>
-	                    <ul class="list_panel">
-	                        <li data-price="2000">Clair</li>
-	                        <li data-price="1300">Margarita</li>
-	                        <li data-price="3500">Selena</li>
-	                    </ul>
-	                </div>
-	                <div class="drop_down_list">
-	                    <span class="list_label">Wybierz kolor</span>
-	                    <span class="list_arrow"></span>
-	                    <ul class="list_panel">
-	                        <li data-price="120">Czerwony</li>
-	                        <li data-price="449">Czarny</li>
-	                        <li data-price="999">Pomarańczowy</li>
-	                    </ul>
-	                </div>
-	                <div class="drop_down_list">
-	                    <span class="list_label">Wybierz materiał</span>
-	                    <span class="list_arrow"></span>
-	                    <ul class="list_panel">
-	                        <li data-price="200">Tkanina</li>
-	                        <li data-price="3999">Skóra</li>
-	                    </ul>
-	                </div>
-	                <div class="checkbox check-box transportCheck">
-	                    <input type="checkbox" id="transport" data-transport-price="200">
-	                    <label for="transport">Transport</label>
-	                </div>
+					</div>
+				</section>
 
-	            </div>
-	        </section>
+				<section class="image_part inline__order">
+					<img src="images/orange.png">
+					<div class="orderInfo">
+					</div>
 
-	        <section class="image_part inline__order">
-	            <img src="images/orange.png">
-			  <div class="orderInfo">
-			  </div>
+				</section>
 
-	        </section>
-
-	        <section class="summary_part inline__order">
+				<section class="summary_part inline__order">
 
 
-	            <div class="summary_panel">
-	                <div class="panel_left">
-	                    <h4 class="chair_title">Twój fotel</h4>
-	                    <span class="color"></span>
-	                    <span class="pattern"></span>
-	                    <span class="transport"></span>
-	                </div>
-	                <div class="panel_right">
-	                    <h4 class="title_value"></h4>
-	                    <span class="color_value"></span>
-	                    <span class="pattern_value"></span>
-	                    <span class="transport_value"></span>
-	                </div>
-	                <div class="sum_label">SUMA</div>
-	                <div class="sum"><strong></strong></div>
-	            </div>
-			 <a href="#" class="button button_chair txtToUpperCase">Zamawiam</a>
-			 <div class="resetButton button button_chair ">Reset
-    		   </div>
-	        </section>
+					<div class="summary_panel">
+						<div class="panel_left">
+							<h4 class="chair_title">Twój fotel</h4>
+							<span class="color"></span>
+							<span class="pattern"></span>
+							<span class="transport"></span>
+						</div>
+						<div class="panel_right">
+							<h4 class="title_value"></h4>
+							<span class="color_value"></span>
+							<span class="pattern_value"></span>
+							<span class="transport_value"></span>
+						</div>
+						<div class="sum_label">SUMA</div>
+						<div class="sum"><strong></strong></div>
+					</div>
+					<a href="#" class="button button_chair txtToUpperCase">Zamawiam</a>
+					<div class="resetButton button button_chair ">Reset
+					</div>
+				</section>
 
-	    </div>
-	</section>
-
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-	<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-
-
+			</div>
+		</section>
 
 	</section>
-
-
 	<!-- SECTION: contact -->
 	<section id="contact">
 		<div class="container contact">
@@ -283,36 +264,32 @@
 		</div>
 
 
-	<form class="container clearFix" novalidate>
-		<div class="left__form floatLeft">
-			<input type="text" name="imie" id="imie" placeholder="Imię">
-			<br>
-			<input type="email" name="email" id="email" placeholder="e-mail">
-			<br>
-			<textarea  rows="6" name="wiadomosc" id="mesage" placeholder="Wiadomość"></textarea>
-			<p class="error-message floatRight">
-			</p>
-			<p class="success-message floatRight">
-			</p>
-		</div>
-		<div class="right__form floatRight">
-			<img src="images/red_chair.png" class="form_chair">
-			<br>
-
-			<div class="checkbox checkboxContact check-box">
-			    <input type="checkbox" id="agreement" >
-			    <label for="agreement" class="formFont">Zgadzam się na przetwarzanie danych osobowych</label>
+		<form class="container clearFix" novalidate>
+			<div class="left__form floatLeft">
+				<input type="text" name="imie" id="imie" placeholder="Imię">
+				<br>
+				<input type="email" name="email" id="email" placeholder="e-mail">
+				<br>
+				<textarea rows="6" name="wiadomosc" id="mesage" placeholder="Wiadomość"></textarea>
+				<p class="error-message floatRight">
+				</p>
+				<p class="success-message floatRight">
+				</p>
 			</div>
-			<br>
-			<input type="submit" value="wyślij" id="contactSend" class="txtToUpperCase button">
-		</div>
-	</form>
+			<div class="right__form floatRight">
+				<img src="images/red_chair.png" class="form_chair">
+				<br>
 
-</section>
+				<div class="checkbox checkboxContact check-box">
+					<input type="checkbox" id="agreement">
+					<label for="agreement" class="formFont">Zgadzam się na przetwarzanie danych osobowych</label>
+				</div>
+				<br>
+				<input type="submit" value="wyślij" id="contactSend" class="txtToUpperCase button">
+			</div>
+		</form>
 
-
-
-
+	</section>
 	<!-- SECTION: footer -->
 	<footer id="footer">
 		<div class="container footer">
@@ -330,10 +307,7 @@
 			</div>
 		</div>
 	</footer>
-
-
-
-<script src="js/js.js" type="text/javascript"></script>
+	<script src="js/js.js" type="text/javascript"></script>
 </body>
 
 </html>

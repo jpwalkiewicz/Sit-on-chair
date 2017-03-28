@@ -1,54 +1,48 @@
-var sliderChair = document.querySelectorAll(".sliderChair");
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// Slider
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 var arrow_left = document.querySelector(".arrow_left");
 var arrow_right = document.querySelector(".arrow_right");
+var chairImg = document.querySelector(".slide");
+var pictureIndex = 0;
 
-arrow_left.addEventListener("click", function(event) {
-    console.log("Huuura clicknięto lewe!");
-    if (sliderChair[0].dataset.image == 0) {
-        sliderChair[0].dataset.image = 1;
-        sliderChair[1].dataset.image = 0;
-        sliderChair[0].classList.remove("invisible");
-        sliderChair[1].classList.add("invisible");
-        sliderChair[2].classList.add("invisible");
-    } else if (sliderChair[2].dataset.image == 0) {
-        sliderChair[2].dataset.image = 1;
-        sliderChair[0].dataset.image = 0;
-        sliderChair[2].classList.remove("invisible");
-        sliderChair[0].classList.add("invisible");
-        sliderChair[1].classList.add("invisible");
-    } else if (sliderChair[1].dataset.image == 0) {
-        sliderChair[1].dataset.image = 1;
-        sliderChair[2].dataset.image = 0;
-        sliderChair[1].classList.remove("invisible");
-        sliderChair[2].classList.add("invisible");
-        sliderChair[0].classList.add("invisible");
-   }
-
-})
-
-arrow_right.addEventListener("click", function(event) {
-    console.log("clicnięto prawe !");
-    if (sliderChair[0].dataset.image == 0) {
-        sliderChair[0].dataset.image = 1;
-        sliderChair[1].dataset.image = 0;
-        sliderChair[0].classList.remove("invisible");
-        sliderChair[1].classList.add("invisible");
-        sliderChair[2].classList.add("invisible");
-    } else if (sliderChair[1].dataset.image == 0) {
-        sliderChair[1].dataset.image = 1;
-        sliderChair[2].dataset.image = 0;
-        sliderChair[1].classList.remove("invisible");
-        sliderChair[0].classList.add("invisible");
-        sliderChair[2].classList.add("invisible");
-    } else if (sliderChair[2].dataset.image == 0) {
-        sliderChair[2].dataset.image = 1;
-        sliderChair[0].dataset.image = 0;
-        sliderChair[2].classList.remove("invisible");
-        sliderChair[1].classList.add("invisible");
-        sliderChair[0].classList.add("invisible");
+function wrap() {
+    if (pictureIndex < 0) {
+        pictureIndex = 2;
+    } else if (pictureIndex > 2) {
+        pictureIndex = 0;
     }
+}
 
-});
+function change_wrap() {
+    wrap();
+    slideMove();
+}
+
+function prev() {
+    pictureIndex--;
+    change_wrap();
+}
+
+function next() {
+    pictureIndex++
+    change_wrap();
+}
+
+function slideMove() {
+    if (pictureIndex == 0) {
+        chairImg.src = "images/black_chair_small.png";
+    } else if (pictureIndex == 1) {
+        chairImg.src = "images/red_chair_small.png";
+    } else if (pictureIndex == 2) {
+        chairImg.src = "images/orange_small.png";
+    }
+}
+
+arrow_left.addEventListener('click', prev);
+arrow_right.addEventListener('click', next);
+
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // Zakup krzkesła
@@ -91,6 +85,7 @@ function reset() {
     pattern_value.innerText = "";
     transport_value.innerText = "";
     sumPrice.innerText = "";
+    agrr.checked = false;
 }
 
 function priceCheck() {
@@ -101,9 +96,9 @@ function priceCheck() {
     var sum = var1 + var2 + var3 + var4;
     if (sum != 0) {
         sumPrice.innerText = sum + " zł";
-   } else {
+    } else {
         sumPrice.innerText = "";
-   }
+    }
     if (var1 == 0) {
         orderInfo.innerText = "Musisz wybrac podstawowy model krzesła";
     } else {
@@ -189,10 +184,11 @@ for (var i = 0; i < list_pattern.length; i++) {
 
 
 transport_check.addEventListener("click", function(event) {
-     console.log(event.target);
 
 
-    console.log(agrr.checked);
+
+
+
     if (agrr.checked == true) {
         transport_value.innerText = "200";
         transport.innerText = "Transport";
@@ -206,7 +202,7 @@ transport_check.addEventListener("click", function(event) {
 });
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-// formularz kontaktowy
+// Formularz kontaktowy
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 var form = document.querySelector("form");
@@ -281,13 +277,3 @@ form.addEventListener("submit", function(event) {
     }
 
 });
-
-
-
-
-
-
-
-
-
-//
