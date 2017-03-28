@@ -51,9 +51,9 @@
 	<section id="slider">
 		<div class="sliderBox container slider clearFix">
 			<div class="slider__image floatLeft">
-				<img src="images/black_chair.png" data-image="1" class="black_chair sliderChair">
-				<img src="images/red_chair.png" data-image="0" class="red_chair invisible sliderChair">
-				<img src="images/orange.png" data-image="0" class="orange_chair invisible sliderChair">
+				<img src="images/black_chair_small.png" data-image="1" class="sliderChair">
+				<img src="images/red_chair_small.png" data-image="0" class="invisible sliderChair">
+				<img src="images/orange_small.png" data-image="0" class="invisible sliderChair">
 			</div>
 			<div class="slider__txt floatRight">
 
@@ -226,7 +226,7 @@
 	                        <li data-price="3999">Skóra</li>
 	                    </ul>
 	                </div>
-	                <div class="checkbox check-box">
+	                <div class="checkbox check-box transportCheck">
 	                    <input type="checkbox" id="transport" data-transport-price="200">
 	                    <label for="transport">Transport</label>
 	                </div>
@@ -298,8 +298,11 @@
 		<div class="right__form floatRight">
 			<img src="images/red_chair.png" class="form_chair">
 			<br>
-			<input type="checkbox" name="agreement" id="agreement" value="agreement" class="checkbox check-box">
-			<label for="agreement" class="agreement">Zgadzam się na przetwarzanie danych osobowych</label>
+
+			<div class="checkbox checkboxContact check-box">
+			    <input type="checkbox" id="agreement" >
+			    <label for="agreement" class="formFont">Zgadzam się na przetwarzanie danych osobowych</label>
+			</div>
 			<br>
 			<input type="submit" value="wyślij" id="contactSend" class="txtToUpperCase button">
 		</div>

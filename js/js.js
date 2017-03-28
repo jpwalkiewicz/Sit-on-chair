@@ -3,29 +3,26 @@ var arrow_left = document.querySelector(".arrow_left");
 var arrow_right = document.querySelector(".arrow_right");
 
 arrow_left.addEventListener("click", function(event) {
-    console.log("Huuura clicknięto!");
+    console.log("Huuura clicknięto lewe!");
     if (sliderChair[0].dataset.image == 0) {
         sliderChair[0].dataset.image = 1;
         sliderChair[1].dataset.image = 0;
-
         sliderChair[0].classList.remove("invisible");
         sliderChair[1].classList.add("invisible");
         sliderChair[2].classList.add("invisible");
     } else if (sliderChair[2].dataset.image == 0) {
         sliderChair[2].dataset.image = 1;
         sliderChair[0].dataset.image = 0;
-
         sliderChair[2].classList.remove("invisible");
         sliderChair[0].classList.add("invisible");
         sliderChair[1].classList.add("invisible");
     } else if (sliderChair[1].dataset.image == 0) {
         sliderChair[1].dataset.image = 1;
         sliderChair[2].dataset.image = 0;
-
         sliderChair[1].classList.remove("invisible");
         sliderChair[2].classList.add("invisible");
         sliderChair[0].classList.add("invisible");
-    }
+   }
 
 })
 
@@ -34,28 +31,24 @@ arrow_right.addEventListener("click", function(event) {
     if (sliderChair[0].dataset.image == 0) {
         sliderChair[0].dataset.image = 1;
         sliderChair[1].dataset.image = 0;
-
         sliderChair[0].classList.remove("invisible");
         sliderChair[1].classList.add("invisible");
         sliderChair[2].classList.add("invisible");
     } else if (sliderChair[1].dataset.image == 0) {
         sliderChair[1].dataset.image = 1;
         sliderChair[2].dataset.image = 0;
-
         sliderChair[1].classList.remove("invisible");
         sliderChair[0].classList.add("invisible");
         sliderChair[2].classList.add("invisible");
     } else if (sliderChair[2].dataset.image == 0) {
         sliderChair[2].dataset.image = 1;
         sliderChair[0].dataset.image = 0;
-
         sliderChair[2].classList.remove("invisible");
         sliderChair[1].classList.add("invisible");
         sliderChair[0].classList.add("invisible");
     }
 
 });
-
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // Zakup krzkesła
@@ -77,9 +70,10 @@ var list_arrows = document.querySelectorAll(".list_arrow");
 var list_title = document.querySelectorAll(".list_panel")[0].children;
 var list_color = document.querySelectorAll(".list_panel")[1].children;
 var list_pattern = document.querySelectorAll(".list_panel")[2].children;
-var transport_check = document.querySelector("#transport");
+var transport_check = document.querySelector(".transportCheck");
 var sumPrice = document.querySelector(".sum");
 
+var agrr = document.getElementById("transport");
 var application = document.querySelector(".application");
 var resetButton = document.querySelector(".resetButton");
 var button_chair = document.querySelector(".button_chair");
@@ -106,19 +100,21 @@ function priceCheck() {
     var4 = Number(transport_value.innerText);
     var sum = var1 + var2 + var3 + var4;
     if (sum != 0) {
-        sumPrice.innerText = sum;
-    }
+        sumPrice.innerText = sum + " zł";
+   } else {
+        sumPrice.innerText = "";
+   }
     if (var1 == 0) {
-         orderInfo.innerText = "Musisz wybrac podstawowy model krzesła";
+        orderInfo.innerText = "Musisz wybrac podstawowy model krzesła";
     } else {
-         orderInfo.innerText = "";
+        orderInfo.innerText = "";
     }
     return sum;
 }
 
 
 application.addEventListener("click", function(event) {
-     event.preventDefault();
+
     if (priceCheck() > 0) {
         resetButton.style.display = "block";
         button_chair.style.marginTop = "25px";
@@ -129,17 +125,20 @@ application.addEventListener("click", function(event) {
     }
 });
 
+
+
+
 button_chair.addEventListener("click", function(event) {
-     event.preventDefault();
-     event.stopPropagation();
-      var1 = Number(title_value.innerText);
-      if (var1 == 0) {
-          orderInfo.innerText = "Musisz wybrac podstawowy model krzesła";
-      }
+    event.preventDefault();
+    event.stopPropagation();
+    var1 = Number(title_value.innerText);
+    if (var1 == 0) {
+        orderInfo.innerText = "Musisz wybrac podstawowy model krzesła";
+    }
 });
 
 resetButton.addEventListener("click", function(event) {
-     event.preventDefault();
+    event.preventDefault();
     reset();
 });
 
@@ -161,33 +160,49 @@ for (var i = 0; i < list_title.length; i++) {
 }
 for (var i = 0; i < list_color.length; i++) {
     list_color[i].addEventListener("click", function(event) {
+        event.stopPropagation();
         this.parentElement.classList.toggle("visible");
-     //    if ()
-        color.innerText = this.innerText;
-        color_value.innerText = this.dataset.price;
-        priceCheck()
+        var1 = Number(title_value.innerText);
+        if (var1 == 0) {
+            orderInfo.innerText = "Musisz wybrac podstawowy model krzesła";
+        } else {
+            color.innerText = this.innerText;
+            color_value.innerText = this.dataset.price;
+            priceCheck()
+        }
     });
 }
 for (var i = 0; i < list_pattern.length; i++) {
     list_pattern[i].addEventListener("click", function(event) {
+        event.stopPropagation();
         this.parentElement.classList.toggle("visible");
-        pattern.innerText = this.innerText;
-        pattern_value.innerText = this.dataset.price;
-        priceCheck()
+        var1 = Number(color_value.innerText);
+        if (var1 == 0) {
+            orderInfo.innerText = "Musisz wybrac kolor krzesła";
+        } else {
+            pattern.innerText = this.innerText;
+            pattern_value.innerText = this.dataset.price;
+            priceCheck()
+        }
     });
 }
 
 
 transport_check.addEventListener("click", function(event) {
-    if (transport_value.innerText == "") {
+     console.log(event.target);
+
+
+    console.log(agrr.checked);
+    if (agrr.checked == true) {
         transport_value.innerText = "200";
         transport.innerText = "Transport";
         priceCheck();
-   } else {
+    } else {
         transport_value.innerText = "";
         transport.innerText = "";
         priceCheck();
-   }
+    }
+
 });
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -196,6 +211,7 @@ transport_check.addEventListener("click", function(event) {
 
 var form = document.querySelector("form");
 var email = document.getElementById("email");
+var mesage = document.getElementById("mesage");
 var agreement = document.getElementById("agreement");
 var errorDiv = document.querySelector(".error-message");
 var successDiv = document.querySelector(".success-message");
@@ -260,7 +276,6 @@ form.addEventListener("submit", function(event) {
             var p = document.createElement("p");
 
             p.innerText = allErrors[i];
-
             errorDiv.appendChild(p);
         }
     }
