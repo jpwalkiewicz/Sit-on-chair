@@ -22,13 +22,6 @@ arrow_left.addEventListener("click", function(event) {
     lastImage.parentNode.removeChild(lastImage);
 });
 
-function imgLoop() {
-    var firstImage = slideImgLi[0];
-    var firstImageClone = firstImage.cloneNode(true);
-    slideImg.appendChild(firstImageClone);
-    firstImage.parentNode.removeChild(firstImage);
-}
-
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // Chair order
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
