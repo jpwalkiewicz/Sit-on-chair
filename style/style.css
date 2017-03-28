@@ -8,7 +8,6 @@
 
 /*Helpful borders for better view*/
 
-
 /*header, h1, section, article, nav, div, img, p, span, ul, button {
 	border: 1px solid red;
 }*/
@@ -254,10 +253,23 @@ nav ul.submenu li a {
     background-color: white;
     background-image: linear-gradient(180deg, white, lightgray);
 }
+/**/
 
 .slider__image {
-     padding-top: 80px;
-     padding-left: 100px;
+     margin-top: 80px;
+     margin-left: 100px;
+     width: 260px;
+     height: 240px;
+     overflow: hidden;
+}
+.slider__image--Ul li {
+     list-style: none;
+}
+
+.slider__image--Ul li img {
+     width: 260px;
+     height: 240px;
+
 }
 
 .slider__txt--title {

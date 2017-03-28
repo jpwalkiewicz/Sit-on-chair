@@ -5,47 +5,32 @@
 var arrow_left = document.querySelector(".arrow_left");
 var arrow_right = document.querySelector(".arrow_right");
 var chairImg = document.querySelector(".slide");
-var pictureIndex = 0;
+var slideImg = document.querySelector(".slider__image--Ul");
+var slideImgLi = document.querySelector(".slider__image--Ul").children;
 
-function wrap() {
-    if (pictureIndex < 0) {
-        pictureIndex = 2;
-    } else if (pictureIndex > 2) {
-        pictureIndex = 0;
-    }
+arrow_right.addEventListener("click", function(event) {
+    var firstImage = slideImgLi[0];
+    var firstImageClone = firstImage.cloneNode(true);
+    slideImg.appendChild(firstImageClone);
+    firstImage.parentNode.removeChild(firstImage);
+});
+arrow_left.addEventListener("click", function(event) {
+    var lastImage = slideImgLi[2];
+    var lastImageClone = lastImage.cloneNode(true);
+    var firstImage = slideImgLi[0];
+    slideImg.insertBefore(lastImageClone, firstImage);
+    lastImage.parentNode.removeChild(lastImage);
+});
+
+function imgLoop() {
+    var firstImage = slideImgLi[0];
+    var firstImageClone = firstImage.cloneNode(true);
+    slideImg.appendChild(firstImageClone);
+    firstImage.parentNode.removeChild(firstImage);
 }
-
-function change_wrap() {
-    wrap();
-    slideMove();
-}
-
-function prev() {
-    pictureIndex--;
-    change_wrap();
-}
-
-function next() {
-    pictureIndex++
-    change_wrap();
-}
-
-function slideMove() {
-    if (pictureIndex == 0) {
-        chairImg.src = "images/black_chair_small.png";
-    } else if (pictureIndex == 1) {
-        chairImg.src = "images/red_chair_small.png";
-    } else if (pictureIndex == 2) {
-        chairImg.src = "images/orange_small.png";
-    }
-}
-
-arrow_left.addEventListener('click', prev);
-arrow_right.addEventListener('click', next);
-
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-// Zakup krzkesła
+// Chair order
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
@@ -53,7 +38,6 @@ var chair_title = document.querySelector(".chair_title");
 var color = document.querySelector(".color");
 var pattern = document.querySelector(".pattern");
 var transport = document.querySelector(".transport");
-
 
 var title_value = document.querySelector(".title_value");
 var color_value = document.querySelector(".color_value");
@@ -67,7 +51,7 @@ var list_pattern = document.querySelectorAll(".list_panel")[2].children;
 var transport_check = document.querySelector(".transportCheck");
 var sumPrice = document.querySelector(".sum");
 
-var agrr = document.getElementById("transport");
+var transportBox = document.getElementById("transport");
 var application = document.querySelector(".application");
 var resetButton = document.querySelector(".resetButton");
 var button_chair = document.querySelector(".button_chair");
@@ -85,7 +69,7 @@ function reset() {
     pattern_value.innerText = "";
     transport_value.innerText = "";
     sumPrice.innerText = "";
-    agrr.checked = false;
+    transportBox.checked = false;
 }
 
 function priceCheck() {
@@ -119,9 +103,6 @@ application.addEventListener("click", function(event) {
         orderInfo.innerText = "";
     }
 });
-
-
-
 
 button_chair.addEventListener("click", function(event) {
     event.preventDefault();
@@ -167,6 +148,7 @@ for (var i = 0; i < list_color.length; i++) {
         }
     });
 }
+
 for (var i = 0; i < list_pattern.length; i++) {
     list_pattern[i].addEventListener("click", function(event) {
         event.stopPropagation();
@@ -182,14 +164,9 @@ for (var i = 0; i < list_pattern.length; i++) {
     });
 }
 
-
 transport_check.addEventListener("click", function(event) {
 
-
-
-
-
-    if (agrr.checked == true) {
+    if (transportBox.checked == true) {
         transport_value.innerText = "200";
         transport.innerText = "Transport";
         priceCheck();
@@ -198,11 +175,10 @@ transport_check.addEventListener("click", function(event) {
         transport.innerText = "";
         priceCheck();
     }
-
 });
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-// Formularz kontaktowy
+// Contact form
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 var form = document.querySelector("form");
@@ -241,8 +217,6 @@ form.addEventListener("submit", function(event) {
         formValidation = false;
     }
 
-
-
     var mesage = document.getElementById("mesage").value;
     if (mesage.length >= 1) {
         console.log("Mesage OK");
@@ -250,10 +224,6 @@ form.addEventListener("submit", function(event) {
         allErrors.push("Uzupełnj sekcję 'Wiadomość'");
         formValidation = false;
     }
-
-
-
-
 
     if (agreement.checked) {
         console.log("Agreement OK");
